@@ -5,6 +5,7 @@ import argparse
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 os.environ.setdefault('PYTORCH_ENABLE_MPS_FALLBACK', '1')
@@ -114,10 +115,13 @@ def validate_entry(plan: dict, entry: dict, plan_path: Path) -> None:
     prompt_path = resolve_prompt_path(prompt_wav, plan_path)
     if not prompt_path.exists():
         raise FileNotFoundError(f'Entry {entry["index"]} prompt wav not found: {prompt_path}')
+    zero_shot_spk_id = api.get('zero_shot_spk_id', role_config.get('zero_shot_spk_id', ''))
     if api['name'] == 'inference_instruct2' and not api.get('instruct_text'):
         raise ValueError(f'Entry {entry["index"]} requires api.instruct_text')
-    if api['name'] == 'inference_zero_shot' and not api.get('prompt_text', role_config.get('prompt_text')):
+    if api['name'] == 'inference_zero_shot' and not zero_shot_spk_id and not api.get('prompt_text', role_config.get('prompt_text')):
         raise ValueError(f'Entry {entry["index"]} requires api.prompt_text')
+    if zero_shot_spk_id and not role_config.get('prompt_text'):
+        raise ValueError(f'Role "{entry["role"]}" uses zero_shot_spk_id but has no prompt_text')
     if api['name'] not in {'inference_instruct2', 'inference_zero_shot', 'inference_cross_lingual'}:
         raise ValueError(f'Entry {entry["index"]} has unsupported api: {api["name"]}')
 
@@ -147,13 +151,61 @@ def resolve_tts_text(model, api_name: str, tts_text: str) -> str:
     return tts_text
 
 
-def synthesize_entry(model, plan: dict, entry: dict, plan_path: Path, output_path: Path):
+def register_zero_shot_roles(model, plan: dict, plan_path: Path) -> dict[str, dict]:
+    role_caches: dict[str, dict] = {}
+    for role, config in plan.get('roles', {}).items():
+        zero_shot_spk_id = config.get('zero_shot_spk_id', '')
+        if not zero_shot_spk_id:
+            continue
+        prompt_text = config.get('prompt_text', '')
+        prompt_wav = config.get('prompt_wav', '')
+        if not prompt_text or not prompt_wav:
+            raise ValueError(f'Role "{role}" must provide prompt_text and prompt_wav for zero_shot_spk_id')
+        prompt_path = resolve_prompt_path(prompt_wav, plan_path)
+        model.add_zero_shot_spk(prompt_text, str(prompt_path), zero_shot_spk_id)
+        base_input = model.frontend.frontend_zero_shot('', prompt_text, str(prompt_path), model.sample_rate, '')
+        del base_input['text']
+        del base_input['text_len']
+        role_caches[role] = {
+            'zero_shot_spk_id': zero_shot_spk_id,
+            'prompt_path': str(prompt_path),
+            'base_input': base_input,
+        }
+    return role_caches
+
+
+def inference_instruct2_with_role_cache(model, tts_text: str, instruct_text: str, role_cache: dict, stream: bool, speed: float, text_frontend: bool):
+    from cosyvoice.utils.file_utils import logging
+
+    instruct_text = model.frontend.text_normalize(instruct_text, split=False, text_frontend=text_frontend)
+    for chunk_text in model.frontend.text_normalize(tts_text, split=True, text_frontend=text_frontend):
+        model_input = {**role_cache['base_input']}
+        text_token, text_token_len = model.frontend._extract_text_token(chunk_text)
+        instruct_token, instruct_token_len = model.frontend._extract_text_token(instruct_text)
+        model_input['text'] = text_token
+        model_input['text_len'] = text_token_len
+        model_input['prompt_text'] = instruct_token
+        model_input['prompt_text_len'] = instruct_token_len
+        model_input.pop('llm_prompt_speech_token', None)
+        model_input.pop('llm_prompt_speech_token_len', None)
+        start_time = time.time()
+        logging.info('synthesis text {}'.format(chunk_text))
+        for model_output in model.model.tts(**model_input, stream=stream, speed=speed):
+            speech_len = model_output['tts_speech'].shape[1] / model.sample_rate
+            logging.info('yield speech len {}, rtf {}'.format(speech_len, (time.time() - start_time) / speech_len))
+            yield model_output
+            start_time = time.time()
+
+
+def synthesize_entry(model, plan: dict, entry: dict, plan_path: Path, output_path: Path, role_caches: dict[str, dict]):
     import torch
     import torchaudio
 
     api = entry['api']
     role_config = resolve_role_config(plan, entry['role'])
     prompt_path = resolve_prompt_path(api.get('prompt_wav', role_config['prompt_wav']), plan_path)
+    zero_shot_spk_id = api.get('zero_shot_spk_id', role_config.get('zero_shot_spk_id', ''))
+    role_cache = role_caches.get(entry['role'])
     common_kwargs = {
         'tts_text': resolve_tts_text(model, api['name'], entry['tts_text']),
         'stream': api['stream'],
@@ -161,20 +213,34 @@ def synthesize_entry(model, plan: dict, entry: dict, plan_path: Path, output_pat
         'text_frontend': api['text_frontend'],
     }
     if api['name'] == 'inference_instruct2':
-        outputs = model.inference_instruct2(
-            instruct_text=api['instruct_text'],
-            prompt_wav=str(prompt_path),
-            **common_kwargs,
-        )
+        if zero_shot_spk_id and role_cache is not None:
+            outputs = inference_instruct2_with_role_cache(
+                model=model,
+                tts_text=common_kwargs['tts_text'],
+                instruct_text=api['instruct_text'],
+                role_cache=role_cache,
+                stream=api['stream'],
+                speed=api['speed'],
+                text_frontend=api['text_frontend'],
+            )
+        else:
+            outputs = model.inference_instruct2(
+                instruct_text=api['instruct_text'],
+                prompt_wav=str(prompt_path),
+                zero_shot_spk_id=zero_shot_spk_id,
+                **common_kwargs,
+            )
     elif api['name'] == 'inference_zero_shot':
         outputs = model.inference_zero_shot(
             prompt_text=api.get('prompt_text', role_config['prompt_text']),
             prompt_wav=str(prompt_path),
+            zero_shot_spk_id=zero_shot_spk_id,
             **common_kwargs,
         )
     else:
         outputs = model.inference_cross_lingual(
             prompt_wav=str(prompt_path),
+            zero_shot_spk_id=zero_shot_spk_id,
             **common_kwargs,
         )
     chunks = [result['tts_speech'].cpu() for result in outputs]
@@ -272,11 +338,12 @@ def main() -> None:
         return
 
     model = load_model(model_dir)
+    role_caches = register_zero_shot_roles(model, plan, plan_path)
     for entry in entries:
         output_path = output_dir / entry['output_wav']
         if args.skip_existing and output_path.exists():
             continue
-        synthesize_entry(model, plan, entry, plan_path, output_path)
+        synthesize_entry(model, plan, entry, plan_path, output_path, role_caches)
 
     merged_output = ''
     if args.merge:

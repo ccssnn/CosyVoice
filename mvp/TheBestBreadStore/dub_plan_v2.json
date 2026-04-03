@@ -1,0 +1,1385 @@
+{
+  "model_dir": "pretrained_models/Fun-CosyVoice3-0.5B",
+  "output_dir": "mvp/outputs/TheBestBreadStore_json",
+  "merge_output_wav": "full_book_v2.wav",
+  "roles": {
+    "旁白者": {
+      "prompt_wav": "data/narrator.wav",
+      "prompt_text": "You are a helpful assistant. Please speak in a calm and wise style.<|endofprompt|>。她学狼先生搅面粉，搅得到处都是，学狼先生揉面团，但是面团硬邦邦的。",
+      "zero_shot_spk_id": "narrator_master"
+    },
+    "小白兔": {
+      "prompt_wav": "data/rabbit.wav",
+      "prompt_text": "You are a helpful assistant. Please speak like a cheerful girl.<|endofprompt|>。你会吃小白兔吗？那我可以跟你学做最好的面包吗？我会打扫卫生，每天给你带苹果。",
+      "zero_shot_spk_id": "rabbit_child"
+    },
+    "狼先生": {
+      "prompt_wav": "data/wolf.wav",
+      "prompt_text": "You are a helpful assistant. Please speak in a serious and calm style.<|endofprompt|>。欢迎光临，兔子哪有面包好吃，你把厨房收拾干净，明天别来了！",
+      "zero_shot_spk_id": "wolf_master"
+    },
+    "路人": {
+      "prompt_wav": "asset/cosyvoice3_prompts/audio/c3_large/insturct/3/Happy_ZH_prompt.wav"
+    }
+  },
+  "entries": [
+    {
+      "index": 1,
+      "role": "旁白者",
+      "tts_text": "<strong>好吃街</strong>上，住着一只小白兔。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a calm and wise style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0001_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 2,
+      "role": "旁白者",
+      "tts_text": "小白兔会自己种最好吃的红苹果，自己煮最可口的蘑菇汤。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a calm and wise style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0002_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 3,
+      "role": "旁白者",
+      "tts_text": "小白兔爱一切美味的食物，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a calm and wise style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0003_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 4,
+      "role": "旁白者",
+      "tts_text": "没有谁比小白兔更懂得享受美味。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a calm and wise style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0004_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 5,
+      "role": "旁白者",
+      "tts_text": "这一天，[breath]苹果还没熟透，蘑菇也吃完了，[breath]小白兔决定去街上寻找新的美味。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a calm and wise style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0005_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 6,
+      "role": "旁白者",
+      "tts_text": "小白兔嘴叼得很，不愿为一般的食物停下脚步。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a calm and wise style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0006_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 7,
+      "role": "旁白者",
+      "tts_text": "于是她走着走着，很快就走到了天黑。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a calm and wise style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0007_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 8,
+      "role": "旁白者",
+      "tts_text": "很晚很晚了，小白兔饿得不行了，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0008_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 9,
+      "role": "旁白者",
+      "tts_text": "这时，她闻到一股浓厚的香气，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0009_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 10,
+      "role": "旁白者",
+      "tts_text": "这香气来自一家从未见过的流动面包店。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0010_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 11,
+      "role": "旁白者",
+      "tts_text": "小白兔深深吸了一口气，[breath]",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0011_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 12,
+      "role": "旁白者",
+      "tts_text": "打算进去试试。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0012_旁白者.wav",
+      "pause_ms_after": 420
+    },
+    {
+      "index": 13,
+      "role": "狼先生",
+      "tts_text": "欢迎光临！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a serious and calm style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0013_狼先生.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 14,
+      "role": "旁白者",
+      "tts_text": "小白兔抬头一看，吓得大叫起来，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0014_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 15,
+      "role": "旁白者",
+      "tts_text": "香香的面包店里居然坐着一头狼！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0015_旁白者.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 16,
+      "role": "旁白者",
+      "tts_text": "狼长着大大的嘴巴和幽幽的眼睛，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0016_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 17,
+      "role": "旁白者",
+      "tts_text": "看起来可怕极了。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0017_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 18,
+      "role": "狼先生",
+      "tts_text": "呃，你想尝尝吗？刚烤好的最好的面包。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a serious and calm style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0018_狼先生.wav",
+      "pause_ms_after": 420
+    },
+    {
+      "index": 19,
+      "role": "旁白者",
+      "tts_text": "小白兔本想撒腿就跑，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0019_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 20,
+      "role": "旁白者",
+      "tts_text": "但听到狼先生说是\"最好\"的面包，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0020_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 21,
+      "role": "旁白者",
+      "tts_text": "还是忍不住走到了柜台前。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0021_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 22,
+      "role": "旁白者",
+      "tts_text": "小白兔接过面包，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0022_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 23,
+      "role": "旁白者",
+      "tts_text": "闻了闻，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0023_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 24,
+      "role": "旁白者",
+      "tts_text": "用手指轻轻一压：<strong>咔滋咔滋</strong>！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0024_旁白者.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 25,
+      "role": "旁白者",
+      "tts_text": "小白兔张嘴咬下去，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0025_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 26,
+      "role": "旁白者",
+      "tts_text": "吞下满口麦香。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0026_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 27,
+      "role": "旁白者",
+      "tts_text": "小白兔不由得赞叹道：",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0027_旁白者.wav",
+      "pause_ms_after": 120
+    },
+    {
+      "index": 28,
+      "role": "小白兔",
+      "tts_text": "这真是我吃过的<strong>最好的面包</strong>！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.05,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak like a cheerful and surprised girl.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0028_小白兔.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 29,
+      "role": "旁白者",
+      "tts_text": "狼先生的脸上满是得意：",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0029_旁白者.wav",
+      "pause_ms_after": 120
+    },
+    {
+      "index": 30,
+      "role": "狼先生",
+      "tts_text": "这当然是最好的，我就喜欢最好的。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 0.98,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a proud and confident style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0030_狼先生.wav",
+      "pause_ms_after": 420
+    },
+    {
+      "index": 31,
+      "role": "旁白者",
+      "tts_text": "小白兔吃了一个又一个，每种面包都有不同的美味，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0031_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 32,
+      "role": "旁白者",
+      "tts_text": "虽然她害怕狼，但太喜欢狼先生的面包了。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0032_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 33,
+      "role": "旁白者",
+      "tts_text": "她忍不住想：如果我也能做出这样的面包该多好。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0033_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 34,
+      "role": "小白兔",
+      "tts_text": "您喜欢吃兔子吗？",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 0.95,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak like a fearful girl.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0034_小白兔.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 35,
+      "role": "旁白者",
+      "tts_text": "小白兔壮着胆子问。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a calm and wise style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0035_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 36,
+      "role": "旁白者",
+      "tts_text": "狼先生皱了皱眉头，不耐烦地回答：",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a calm and wise style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0036_旁白者.wav",
+      "pause_ms_after": 120
+    },
+    {
+      "index": 37,
+      "role": "狼先生",
+      "tts_text": "我才不吃兔子呢！我只喜欢<strong>最好的面包</strong>！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an angry and serious style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0037_狼先生.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 38,
+      "role": "小白兔",
+      "tts_text": "那……我可以留在您这里学做面包吗？",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 0.95,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak like a fearful and hopeful girl.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0038_小白兔.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 39,
+      "role": "旁白者",
+      "tts_text": "狼先生想了想：",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0039_旁白者.wav",
+      "pause_ms_after": 120
+    },
+    {
+      "index": 40,
+      "role": "狼先生",
+      "tts_text": "可以，但我只教最好的，你能做到最好吗？",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 0.97,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a serious and objective style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0040_狼先生.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 41,
+      "role": "小白兔",
+      "tts_text": "我能！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.08,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak like a determined girl.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0041_小白兔.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 42,
+      "role": "旁白者",
+      "tts_text": "小白兔用力地点点头。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0042_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 43,
+      "role": "旁白者",
+      "tts_text": "小白兔学狼先生搅拌面粉，却总把面粉搅得到处都是。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0043_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 44,
+      "role": "旁白者",
+      "tts_text": "狼先生有点不高兴了。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0044_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 45,
+      "role": "旁白者",
+      "tts_text": "小白兔学狼先生揉面团，却总把面团揉得硬邦邦的。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0045_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 46,
+      "role": "旁白者",
+      "tts_text": "狼先生忍住没生气。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0046_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 47,
+      "role": "旁白者",
+      "tts_text": "小白兔学狼先生烤面包，却总把面包烤煳。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0047_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 48,
+      "role": "旁白者",
+      "tts_text": "狼先生咬了一口，他最受不了难吃的食物，生气地说：",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0048_旁白者.wav",
+      "pause_ms_after": 120
+    },
+    {
+      "index": 49,
+      "role": "狼先生",
+      "tts_text": "这真是<strong>最难吃的面包</strong>！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.01,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an angry and bold style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0049_狼先生.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 50,
+      "role": "旁白者",
+      "tts_text": "小白兔更害怕了，不小心把狼先生的厨房弄得一团糟。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0050_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 51,
+      "role": "旁白者",
+      "tts_text": "这下，狼先生终于失去了耐心，大吼：",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a mysterious and surprised style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0051_旁白者.wav",
+      "pause_ms_after": 120
+    },
+    {
+      "index": 52,
+      "role": "狼先生",
+      "tts_text": "把这里收拾干净，下楼看店。明天别来了！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an angry and loud style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0052_狼先生.wav",
+      "pause_ms_after": 420
+    },
+    {
+      "index": 53,
+      "role": "旁白者",
+      "tts_text": "小白兔难过极了，坐在楼下的椅子上掉眼泪。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0053_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 54,
+      "role": "旁白者",
+      "tts_text": "狼先生在楼上，听着楼下的哭声，心里很不是滋味。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0054_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 55,
+      "role": "旁白者",
+      "tts_text": "他决定收回刚才糟糕的气话，为小白兔烤一个面包。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0055_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 56,
+      "role": "旁白者",
+      "tts_text": "一个小白兔没吃过的苹果面包。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0056_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 57,
+      "role": "旁白者",
+      "tts_text": "狼先生下楼，把刚烤好的苹果面包递给小白兔。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0057_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 58,
+      "role": "旁白者",
+      "tts_text": "小白兔有些犹豫，但还是接过面包。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0058_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 59,
+      "role": "旁白者",
+      "tts_text": "苹果面包发出清脆的声音：<strong>咔滋咔滋</strong>！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0059_旁白者.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 60,
+      "role": "狼先生",
+      "tts_text": "好吃吗？",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 0.94,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a soft and calm style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0060_狼先生.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 61,
+      "role": "小白兔",
+      "tts_text": "嗯！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.02,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak like a cheerful girl.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0061_小白兔.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 62,
+      "role": "狼先生",
+      "tts_text": "想学吗？",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 0.94,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a soft and calm style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0062_狼先生.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 63,
+      "role": "小白兔",
+      "tts_text": "……想！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 0.96,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak like a soft and fearful girl.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0063_小白兔.wav",
+      "pause_ms_after": 420
+    },
+    {
+      "index": 64,
+      "role": "旁白者",
+      "tts_text": "狼先生不再对小白兔大吼大叫，开始手把手地教小白兔揉面团、烤面包。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0064_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 65,
+      "role": "旁白者",
+      "tts_text": "小白兔离狼先生越来越近，他们讲的话也越来越多。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0065_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 66,
+      "role": "旁白者",
+      "tts_text": "有一天，小白兔可以自己搅拌面粉了。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0066_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 67,
+      "role": "旁白者",
+      "tts_text": "又有一天，小白兔可以自己揉好面团了。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0067_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 68,
+      "role": "旁白者",
+      "tts_text": "终于有一天，小白兔烤出<strong>咔滋咔滋</strong>响的面包了。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0068_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 69,
+      "role": "旁白者",
+      "tts_text": "狼先生咬了一口，眼睛发出了光：",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0069_旁白者.wav",
+      "pause_ms_after": 120
+    },
+    {
+      "index": 70,
+      "role": "狼先生",
+      "tts_text": "这就是<strong>最好的面包</strong>。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 0.98,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a proud and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0070_狼先生.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 71,
+      "role": "小白兔",
+      "tts_text": "你就是<strong>最好的师傅</strong>！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.06,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak like a joyful girl.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0071_小白兔.wav",
+      "pause_ms_after": 420
+    },
+    {
+      "index": 72,
+      "role": "旁白者",
+      "tts_text": "烤出咔滋咔滋面包后的第二天，小白兔没有按时来店里帮忙。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0072_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 73,
+      "role": "旁白者",
+      "tts_text": "狼先生觉得很奇怪，忍不住走出店张望。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0073_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 74,
+      "role": "旁白者",
+      "tts_text": "狼先生搅拌面粉时不需要再做一遍给小白兔看了。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0074_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 75,
+      "role": "旁白者",
+      "tts_text": "狼先生揉面团时也不需要收拾小白兔打翻的牛奶了。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0075_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 76,
+      "role": "旁白者",
+      "tts_text": "狼先生把面包从烤箱里拿出来时，再也看不到小白兔惊喜的表情了。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0076_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 77,
+      "role": "旁白者",
+      "tts_text": "狼先生忽然感到了寂寞。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in an empathetic and hopeful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0077_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 78,
+      "role": "旁白者",
+      "tts_text": "太阳快下山了，狼先生听到门口传来很多脚步声。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0078_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 79,
+      "role": "小白兔",
+      "tts_text": "就是这里！<strong>就是这里</strong>！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.08,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak like a proud and joyful girl.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0079_小白兔.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 80,
+      "role": "旁白者",
+      "tts_text": "小白兔带来了好多朋友。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0080_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 81,
+      "role": "旁白者",
+      "tts_text": "原来小白兔在家里做了好多面包，送给街上的朋友品尝，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0081_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 82,
+      "role": "旁白者",
+      "tts_text": "无论谁吃了咔滋咔滋面包，都不得不承认，这是最好的面包。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0082_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 83,
+      "role": "小白兔",
+      "tts_text": "这算什么呀？我师傅会做各种各样<strong>最好的面包</strong>哩！",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.06,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak like a proud and joyful girl.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0083_小白兔.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 84,
+      "role": "旁白者",
+      "tts_text": "于是，大家跟着小白兔来到了面包店。狼先生又惊又喜。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0084_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 85,
+      "role": "路人",
+      "tts_text": "请问这是什么面包？",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.04,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a curious and cheerful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0085_路人.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 86,
+      "role": "狼先生",
+      "tts_text": "这是最好的苹果面包。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a serious and calm style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0086_狼先生.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 87,
+      "role": "路人",
+      "tts_text": "请问这个呢？",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.04,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a curious and cheerful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0087_路人.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 88,
+      "role": "狼先生",
+      "tts_text": "这是最好的奶油面包。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a serious and calm style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0088_狼先生.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 89,
+      "role": "路人",
+      "tts_text": "那这个又是什么？",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.04,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a curious and cheerful style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0089_路人.wav",
+      "pause_ms_after": 320
+    },
+    {
+      "index": 90,
+      "role": "狼先生",
+      "tts_text": "这是最好的坚果面包。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a calm and serious style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0090_狼先生.wav",
+      "pause_ms_after": 420
+    },
+    {
+      "index": 91,
+      "role": "旁白者",
+      "tts_text": "从那以后，狼先生和小白兔一起，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0091_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 92,
+      "role": "旁白者",
+      "tts_text": "用心烤着每一个最好的面包。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0092_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 93,
+      "role": "旁白者",
+      "tts_text": "他们的面包店，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0093_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 94,
+      "role": "旁白者",
+      "tts_text": "成了<strong>好吃街</strong>上最受欢迎的地方。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0094_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 95,
+      "role": "旁白者",
+      "tts_text": "所有来买面包的朋友，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0095_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 96,
+      "role": "旁白者",
+      "tts_text": "都能吃到最好吃的面包，",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0096_旁白者.wav",
+      "pause_ms_after": 250
+    },
+    {
+      "index": 97,
+      "role": "旁白者",
+      "tts_text": "也能感受到最温暖的快乐。",
+      "api": {
+        "name": "inference_instruct2",
+        "speed": 1.0,
+        "stream": false,
+        "text_frontend": false,
+        "instruct_text": "You are a helpful assistant. Please speak in a joyful and optimistic style.<|endofprompt|>"
+      },
+      "output_wav": "sentences/0097_旁白者.wav",
+      "pause_ms_after": 420
+    }
+  ]
+}
