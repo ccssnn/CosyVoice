@@ -16,6 +16,7 @@ sys.path.append(str(ROOT_DIR / 'third_party' / 'Matcha-TTS'))
 
 
 DEFAULT_PLAN = ROOT_DIR / 'mvp' / 'TheBestBreadStore' / 'dub_plan.json'
+CROSS_LINGUAL_COSYVOICE3_PREFIX = 'You are a helpful assistant.<|endofprompt|>'
 
 
 def parse_args() -> argparse.Namespace:
@@ -136,6 +137,16 @@ def validate_plan(plan: dict, plan_path: Path, entries: list[dict]) -> None:
         seen_outputs.add(output_wav)
 
 
+def resolve_tts_text(model, api_name: str, tts_text: str) -> str:
+    if api_name != 'inference_cross_lingual':
+        return tts_text
+    if '<|endofprompt|>' in tts_text:
+        return tts_text
+    if model.__class__.__name__ == 'CosyVoice3':
+        return f'{CROSS_LINGUAL_COSYVOICE3_PREFIX}{tts_text}'
+    return tts_text
+
+
 def synthesize_entry(model, plan: dict, entry: dict, plan_path: Path, output_path: Path):
     import torch
     import torchaudio
@@ -144,7 +155,7 @@ def synthesize_entry(model, plan: dict, entry: dict, plan_path: Path, output_pat
     role_config = resolve_role_config(plan, entry['role'])
     prompt_path = resolve_prompt_path(api.get('prompt_wav', role_config['prompt_wav']), plan_path)
     common_kwargs = {
-        'tts_text': entry['tts_text'],
+        'tts_text': resolve_tts_text(model, api['name'], entry['tts_text']),
         'stream': api['stream'],
         'speed': api['speed'],
         'text_frontend': api['text_frontend'],
